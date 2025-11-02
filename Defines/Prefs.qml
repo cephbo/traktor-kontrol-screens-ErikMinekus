@@ -59,5 +59,6 @@ QtObject {
   // 20: Nexus
   // 21: Prime
   // 22: RB 3Band
-  readonly property int  waveformColors: 21
+  // 23: Spectrum (Traktor Pro 4)
+  readonly property int  waveformColors: 23
 }
