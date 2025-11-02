@@ -519,7 +519,11 @@ QtObject {
     // RB 3Band
     { low1:  rgba ( 24,  48, 140, 200),  low2:  rgba (  0, 184, 232, 180),
       mid1:  rgba (255, 110,   0, 255),  mid2:  rgba (245, 120,  10, 160),
-      high1: rgba (232, 232, 232, 255),  high2: rgba (152, 152, 152, 255) }
+      high1: rgba (232, 232, 232, 255),  high2: rgba (152, 152, 152, 255) },
+    // Spectrum (Traktor Pro 4)
+    { low1:  rgba (255,   0,   0, 178),  low2:  rgba (255,  80,   0, 255),
+      mid1:  rgba (  0, 255,   0, 178),  mid2:  rgba (100, 255, 100, 255),
+      high1: rgba (  0,   0, 255, 178),  high2: rgba (150, 150, 255, 255) }
   ]
 
   function getDefaultWaveformColors()
