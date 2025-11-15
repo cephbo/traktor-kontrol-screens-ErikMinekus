@@ -8,7 +8,7 @@ Module
   property bool momentary: false
   property int index: 1
   property alias selectedFx: fxSelect
-  property int channelFxSelectorVal: -1
+  property int channelFxSelectorVal: SelectedChannelFX.None
   property string surface_mixer_channel: ""
 
   signal fxChanged()
@@ -28,7 +28,7 @@ Module
     // Channel FX Enable
     Wire
     {
-      enabled: !module.momentary && (module.channelFxSelectorVal == -1);
+      enabled: !module.momentary && (module.channelFxSelectorVal == SelectedChannelFX.None);
       from: module.surface_mixer_channel + ".channel_fx.on";
       to: TogglePropertyAdapter
       {
@@ -38,7 +38,7 @@ Module
     }
     Wire
     {
-      enabled: module.momentary && (module.channelFxSelectorVal == -1);
+      enabled: module.momentary && (module.channelFxSelectorVal == SelectedChannelFX.None);
       from: module.surface_mixer_channel + ".channel_fx.on";
       to: HoldPropertyAdapter
       {
@@ -49,7 +49,7 @@ Module
 
     Wire
     {
-      enabled: module.channelFxSelectorVal != -1;
+      enabled: module.channelFxSelectorVal != SelectedChannelFX.None;
       from: module.surface_mixer_channel + ".channel_fx.on";
       to: ButtonScriptAdapter
       {
