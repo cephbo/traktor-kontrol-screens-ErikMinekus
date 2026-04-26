@@ -22,7 +22,7 @@ Item {
   property          int    stemStyle:       StemStyle.track
   readonly property bool   isStemDeck: (deckType.value == DeckType.Stem && stemStyle == StemStyle.daw && deckSizeState == "large")
 
-  readonly property int    playmarkerPosition: Prefs.playmarkerPositionLeft && !slicer.enabled && !beatgrid.editEnabled ? -240 : 0
+  readonly property int    playmarkerPosition: Prefs.playmarkerPositionLeft && !slicer.enabled && !beatgrid.editEnabled ? -360 : 0
   readonly property double sampleWidthDiv:     Prefs.playmarkerPositionLeft ? 0.5 : 0.75
 
   //--------------------------------------------------------------------------------------------------------------------
