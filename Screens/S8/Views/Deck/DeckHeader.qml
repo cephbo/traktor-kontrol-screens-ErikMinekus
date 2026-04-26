@@ -55,13 +55,48 @@ Item {
   //            the state-enum in c++ to the corresponding state
   // NOTE: For now, we set fix states in the DeckHeader! But we wanna be able to
   //       change the states.
-  property int topLeftState:      0                                 // headerSettingTopLeft.value
-  property int topMiddleState:    hasTrackStyleHeader(deckType) ? 13 : 29 // headerSettingTopMid.value
-  property int topRightState:     23                                // headerSettingTopRight.value
 
-  property int bottomLeftState:   1                                 // headerSettingMidLeft.value
-  property int bottomMiddleState: hasTrackStyleHeader(deckType) ? 12 : 30 // headerSettingMidMid.value
-  property int bottomRightState:  24                                // headerSettingMidRight.value
+  // Index  │ Field           │  Description
+  // ───────┼─────────────────┼───────────────────────────────────────
+  //     0  │  title          │  Track title
+  //     1  │  artist         │  Artist name
+  //     2  │  release        │  Album name
+  //     3  │  mix            │  Mix name
+  //     4  │  label          │  Record label
+  //     5  │  catNo          │  Catalog number
+  //     6  │  genre          │  Genre
+  //     7  │  trackLength    │  Total duration
+  //     8  │  bitrate        │  Track bitrate
+  //     9  │  bpmTrack       │  Track BPM
+  //    10  │  gain           │  Track gain in dB
+  //    11  │  elapsedTime    │  Time played
+  //    12  │  remainingTime  │  Time remaining
+  //    13  │  beats          │  Beat counter (phrase.beat.sub)
+  //    14  │  beatsToCue     │  Beats to next cue
+  //    15  │  bpm            │  Base BPM
+  //    16  │  tempo          │  Tempo as percentage
+  //    17  │  key            │  Musical key (Camelot if enabled)
+  //    18  │  keyText        │  Legacy key display
+  //    19  │  comment        │  Comment field
+  //    20  │  comment2       │  Comment field 2
+  //    21  │  remixer        │  Remixer name
+  //    22  │  pitchRange     │  Pitch range percentage
+  //    23  │  bpmStable      │  Stable BPM
+  //    24  │  tempoStable    │  Stable tempo %
+  //    25  │  sync           │  Sync/Master status
+  //    26  │  off            │  Empty
+  //    27  │  off            │  Empty
+  //    28  │  bpmTrack       │  Track BPM (duplicate)
+  //    29  │  remixBeats     │  Remix beat position
+  //    30  │  remixQuantize  │  Remix quantize setting
+
+  property int topLeftState:      0                                       // headerSettingTopLeft.value
+  property int topMiddleState:    hasTrackStyleHeader(deckType) ? 12 : 29 // headerSettingTopMid.value
+  property int topRightState:     17                                      // headerSettingTopRight.value
+
+  property int bottomLeftState:   1                                       // headerSettingMidLeft.value
+  property int bottomMiddleState: hasTrackStyleHeader(deckType) ? 7 : 30  // headerSettingMidMid.value
+  property int bottomRightState:  24                                      // headerSettingMidRight.value
 
   height: largeHeaderHeight
   clip: false //true
